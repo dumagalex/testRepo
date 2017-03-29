@@ -1,8 +1,9 @@
 ########################################################################################################################
 #!!
+#! @input flow_input_0: legalInputDescr
 #! @input flow_input_$1: descrInput
 #!
-#! @output flow_output_0: outputOk
+#! @output flow_output_0: legalOutputDescr
 #! @output flow_output_$1: outputDescr
 #!
 #! @result CUSTOM$1: resultDescr
