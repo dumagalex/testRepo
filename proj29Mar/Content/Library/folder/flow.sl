@@ -1,11 +1,27 @@
+########################################################################################################################
+#!!
+#! @input flow_input_$1: descrInput
+#!
+#! @output flow_output_0: outputOk
+#! @output flow_output_$1: outputDescr
+#!
+#! @result CUSTOM: resultDescr
+#!!#
+########################################################################################################################
 namespace: folder
 flow:
   name: flow
+  inputs:
+    - flow_input_0:
+        sensitive: true
+    - flow_input_$1
   workflow:
     - append:
         do:
           io.cloudslang.base.strings.append:
-            - origin_string: '123'
+            - origin_string:
+                value: '123'
+                sensitive: true
             - text: '${origin_string}'
             - input_0:
                 value: '13'
@@ -13,9 +29,12 @@ flow:
         publish:
           - output_0: output_0
         navigate:
-          - SUCCESS: SUCCESS
+          - SUCCESS: CUSTOM
+  outputs:
+    - flow_output_0
+    - flow_output_$1
   results:
-    - SUCCESS
+    - CUSTOM
 extensions:
   graph:
     steps:
@@ -23,11 +42,11 @@ extensions:
         x: 236.60000610351562
         y: 104.39999389648438
         navigate:
-          ef69461d-b1db-8ce9-ee4f-93132a6b1800:
-            targetId: 12864f8b-1a73-b50c-d4d4-e3d5ed1a2342
+          720520ca-515b-1ca4-ffb5-a06ec71f1361:
+            targetId: 4d608c80-f39b-f6ed-c249-4ecf951be698
             port: SUCCESS
     results:
-      SUCCESS:
-        12864f8b-1a73-b50c-d4d4-e3d5ed1a2342:
-          x: 473
-          y: 109
+      CUSTOM:
+        4d608c80-f39b-f6ed-c249-4ecf951be698:
+          x: 434
+          y: 112
