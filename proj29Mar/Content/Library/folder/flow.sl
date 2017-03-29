@@ -5,7 +5,7 @@
 #! @output flow_output_0: outputOk
 #! @output flow_output_$1: outputDescr
 #!
-#! @result CUSTOM: resultDescr
+#! @result CUSTOM$1: resultDescr
 #!!#
 ########################################################################################################################
 namespace: folder
@@ -29,12 +29,12 @@ flow:
         publish:
           - output_0: output_0
         navigate:
-          - SUCCESS: CUSTOM
+          - SUCCESS: CUSTOM$1
   outputs:
     - flow_output_0
     - flow_output_$1
   results:
-    - CUSTOM
+    - CUSTOM$1
 extensions:
   graph:
     steps:
@@ -46,7 +46,7 @@ extensions:
             targetId: 4d608c80-f39b-f6ed-c249-4ecf951be698
             port: SUCCESS
     results:
-      CUSTOM:
+      CUSTOM$1:
         4d608c80-f39b-f6ed-c249-4ecf951be698:
           x: 434
           y: 112
