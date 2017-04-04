@@ -5,8 +5,14 @@ flow:
     - append:
         do:
           io.cloudslang.base.strings.append: []
+        publish:
+          - new_string
         navigate:
           - SUCCESS: SUCCESS
+  outputs:
+    - flow_output_0:
+        value: '123'
+        sensitive: true
   results:
     - SUCCESS
 extensions:
